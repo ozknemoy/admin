@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ru">
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Заголовок</title>
+    <meta name="description" content="">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:image" content="path/to/image.jpg">
+
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+
+    <!-- Header CSS (First Sections of Website: paste after release from header.min.css here) -->
+    <style></style>
+
+    <!-- Load CSS, CSS Localstorage & WebFonts Main Function -->
+    <script>!function (e) {
+        "use strict";
+        function t(e, t, n) {
+            e.addEventListener ? e.addEventListener(t, n, !1) : e.attachEvent && e.attachEvent("on" + t, n)
+        }
+
+        function n(t, n) {
+            return e.localStorage && localStorage[t + "_content"] && localStorage[t + "_file"] === n
+        }
+
+        function a(t, a) {
+            if (e.localStorage && e.XMLHttpRequest)n(t, a) ? o(localStorage[t + "_content"]) : l(t, a); else {
+                var s = r.createElement("link");
+                s.href = a, s.id = t, s.rel = "stylesheet", s.type = "text/css", r.getElementsByTagName("head")[0].appendChild(s), r.cookie = t
+            }
+        }
+
+        function l(e, t) {
+            var n = new XMLHttpRequest;
+            n.open("GET", t, !0), n.onreadystatechange = function () {
+                4 === n.readyState && 200 === n.status && (o(n.responseText), localStorage[e + "_content"] = n.responseText, localStorage[e + "_file"] = t)
+            }, n.send()
+        }
+
+        function o(e) {
+            var t = r.createElement("style");
+            t.setAttribute("type", "text/css"), r.getElementsByTagName("head")[0].appendChild(t), t.styleSheet ? t.styleSheet.cssText = e : t.innerHTML = e
+        }
+
+        var r = e.document;
+        e.loadCSS = function (e, t, n) {
+            var a, l = r.createElement("link");
+            if (t)a = t; else {
+                var o;
+                o = r.querySelectorAll ? r.querySelectorAll("style,link[rel=stylesheet],script") : (r.body || r.getElementsByTagName("head")[0]).childNodes, a = o[o.length - 1]
+            }
+            var s = r.styleSheets;
+            l.rel = "stylesheet", l.href = e, l.media = "only x", a.parentNode.insertBefore(l, t ? a : a.nextSibling);
+            var c = function (e) {
+                for (var t = l.href, n = s.length; n--;)if (s[n].href === t)return e();
+                setTimeout(function () {
+                    c(e)
+                })
+            };
+            return l.onloadcssdefined = c, c(function () {
+                l.media = n || "all"
+            }), l
+        }, e.loadLocalStorageCSS = function (l, o) {
+            n(l, o) || r.cookie.indexOf(l) > -1 ? a(l, o) : t(e, "load", function () {
+                a(l, o)
+            })
+        }
+    }(this);</script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900&amp;subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic"
+          rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <!--<link rel="stylesheet" href="libs/superfish/dist/css/superfish.css">-->
+    <!-- Load CSS Compiled without JS -->
+    <link rel="stylesheet" href="css/fonts.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
+    <noscript>
+    </noscript>
+    <!-- Load CSS Start -->
+    <script>loadLocalStorageCSS("webfonts", "css/fonts.min.css?ver=1.0.0");</script>
+    <script>loadCSS("css/header.min.css?ver=1.0.0", false, "all");</script>
+    <!--<script>loadCSS( "css/main.min.css?ver=1.0.0", false, "all" );</script>-->
+    <!-- Load CSS End -->
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body class="menu-collapsed">
+<div class="bg-holder"></div>
+<header class="header">
+    <a class="logo dib" href="#">Adminka</a>
+
+    <div class="dib hamburger">
+        <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+    </div>
+    <div class="dib search-header">
+        <i class="fa fa-search " aria-hidden="true"></i>
+        <input type="text" placeholder="Search for...">
+    </div>
+    <div class="user-bar">
+        <div class="dib user-bar_item">
+            <i class="fa fa-bell-o pointer hover-red"></i>
+            <span class="badge badge-admin badge-red badge-user-bar">5</span>
+        </div>
+
+        <div class="dib user-bar_item">
+            <i class="fa fa-envelope-o pointer hover-green"></i>
+            <span class="badge badge-admin badge-green badge-user-bar">5</span>
+        </div>
+
+        <img src="//placehold.it/46" class="img-circle" alt="">
+
+    </div>
+    <div class="contact-header hidden-xs">
+        <span>Have questions?</span>
+        <a href="mailto:ozk.nemoy@mail.ru">ozk.nemoy@mail.ru</a>
+    </div>
+</header>
+<aside class="aside">
+    <ul>
+        <li><a href="/"><i class="fa fa-home"></i><span>Домой</span></a></li>
+        <li>
+            <a data-toggle="collapse" class="link" href="#components">
+                <i class="fa fa-cog"></i><span>Компоненты</span><b class="fa_link fa fa-angle-down"></b>
+            </a>
+            <ul id="components" class="panel-collapse collapse">
+                <li><a class="sub-link" href="comp-email.html">
+                    <span>Мыло</span>
+                </a></li>
+                <li><a class="sub-link" href="comp-timeline.html">
+                    <span>Timeline</span>
+                </a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#UI" class="link" data-toggle="collapse">
+                <i class="fa fa-thermometer"></i><span>UI</span><b class="fa_link fa fa-angle-down"></b>
+            </a>
+            <ul id="UI" class="panel-collapse collapse">
+                <li class="active">
+                    <a class="sub-link" href="typography.html">
+                        <span>Typography</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="sub-link" href="comp-timeline.html">
+                        <span>Timeline</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li><a class="link" href="#"><i class="fa fa-cog"></i><span>Ссылка4</span><b
+                class="fa_link fa fa-angle-down"></b></a></li>
+        <li><a class="link" href="#"><i class="fa fa-cogs"></i><span>Ссылка5</span><b
+                class="fa_link fa fa-angle-down"></b></a></li>
+        <li><a class="link" href="#"><i class="fa fa-feed"></i><span>Ссылка6</span><b
+                class="fa_link fa fa-angle-down"></b></a></li>
+        <li><a class="link" href="#"><i class="fa fa-gavel"></i><span>Ссылка7</span><b
+                class="fa_link fa fa-angle-down"></b></a></li>
+        <li><a class="link" href="#"><i class="fa fa-warning"></i><span>Ссылка8</span><b
+                class="fa_link fa fa-angle-down"></b></a></li>
+        <li><a class="link" href="#"><i class="fa fa-key"></i><span>Ссылка9</span><b
+                class="fa_link fa fa-angle-down"></b></a></li>
+    </ul>
+</aside>
+<main class="main">
+    <div class="main-holder">
+
+        <div class="upper-block">
+            <div class="fr breadcrumbs">
+                <span>Home</span> /
+                <span>Typography</span>
+            </div>
+            <h1>TYPOGRAFY</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-lg4">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">text-center</div>
+                    <div class="panel-body typography">
+                        <div>
+                            <h1>H1. Heading 1</h1>
+
+                            <p>Lorem ipsum dolor sit amet, id mollis iaculis mi nisl pulvinar, lacinia scelerisque
+                                pharetra, placerat vestibulum eleifend pellentesque.</p>
+                        </div>
+                        <div>
+                            <h2>H2. Heading 2</h2>
+
+                            <p>Lorem ipsum dolor sit amet, id mollis iaculis mi nisl pulvinar, lacinia scelerisque
+                                pharetra, placerat vestibulum eleifend pellentesque.</p>
+                        </div>
+                        <div><h3>H3. Heading 3</h3>
+
+                            <p>Lorem ipsum dolor sit amet, id mollis iaculis mi nisl pulvinar, lacinia scelerisque
+                                pharetra, placerat vestibulum eleifend pellentesque.</p>
+                        </div>
+                        <div><h4>H4. Heading 4</h4>
+
+                            <p>Lorem ipsum dolor sit amet, id mollis iaculis mi nisl pulvinar, lacinia scelerisque
+                                pharetra,.</p>
+                        </div>
+                        <div><h5>H5. Heading 5</h5>
+
+                            <p>Lorem ipsum dolor sit amet, id mollis iaculis mi nisl pulvinar, lacinia scelerisque
+                                pharetra.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-lg4">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">text-center</div>
+                    <div class="panel-body typography">
+                        <div class="light-text"><p>Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla
+                            tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla. Nullam quis
+                            risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis.</p></div>
+                        <div class="regular-text"><p>Curabitur bibendum ornare dolor, quis
+                            ullamcorper ligula dfgz`zzsodales at. Nullam quis risus eget urna mollis ornare vel eu leo.
+                            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam
+                            id dolor id.</p></div>
+                        <div class="upper-text bold-text">__________orem ipsum dolor sit amet,
+                            consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula
+                            sodales at. Nulla tellus elit, varius non commodo eget, mattis vel eros. In sed ornare
+                            nulla.
+                        </div>
+                        <div class="bold-text"><p>Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Curabitur bibendum ornare dolor, quis ullam-corper ligula sodales at. Nulla
+                            tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla.</p></div>
+                        <div class="small-text"><p>Secondary text. Lorem ipsum dolor sit amet, id
+                            mollis iaculis mi nisl pulvinar,</p>
+
+                            <p>lacinia scelerisque pharetra, placerat vestibulum eleifend</p>
+
+                            <p>pellentesque, mi nam.</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-lg4">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">text-center</div>
+                    <div class="panel-body typography have-blur-list">
+                        <h5 class="list-header">Unordered list:</h5>
+                        <ul class="small-text">
+                            <li>Lorem ipsum dolor sit amet</li>
+                            <li>Сlacinia scelerisque pharetra
+                                <ul>
+                                    <li>Dui rhoncus quisque integer lorem
+                                        <ul>
+                                            <li>Libero iaculis vestibulum eu vitae</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Nisl lectus nibh habitasse suspendisse ut</li>
+                            <li><span>Posuere cursus hac, vestibulum wisi nulla bibendum</span></li>
+                        </ul>
+                        <h5 class="list-header">Ordered Lists:</h5>
+                        <ol class="small-text">
+                            <li><span>Eu non nec cursus quis mollis, amet quam nec</span></li>
+                            <li><span>Et suspendisse, adipiscing fringilla ornare sit ligula sed</span>
+                                <ol>
+                                    <li><span>Interdum et justo nulla</span>
+                                        <ol>
+                                            <li><span>Magna amet, suscipit suscipit non amet</span></li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li><span>Metus duis eu non eu ridiculus turpis</span></li>
+                            <li><span>Neque egestas id fringilla consectetuer justo curabitur, wisi magna neque commodo volutpat</span>
+                            </li>
+                        </ol>
+                        <div class="accent">Important text fragment. Lorem ipsum dolor sit amet, id mollis iaculis mi
+                            nisl pulvinar, lacinia scelerisque pharetra.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-lg4">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">text-center</div>
+                    <div class="panel-body typography small-text">
+                        <div class="section-block red-text__light"><p>Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla
+                            tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla. Nullam quis
+                            risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis
+                            parturient montes, nascetur ridiculus mus.</p>
+                        </div>
+                        <div class="section-block yellow-text"><p>Curabitur bibendum ornare dolor, quis
+                            ullamcorper ligula dfgz`zzsodales at. Nullam quis risus eget urna mollis ornare vel eu leo.
+                            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam
+                            id dolor id nibh ultricies vehicula ut id elit. In sed ornare nulla.</p>
+                        </div>
+                        <div class="section-block links-text">
+                            <p>Lorem ipsum <a href="">dolor</a>
+                                sit amet,consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis
+                                <a href="">_______ullamcorper</a>
+                                ligula sodales at. Nulla tellus elit, varius non commodoeget,
+                                <a href="">______mattis</a>
+                                vel eros. In sed ornare nulla.
+                            </p>
+                        </div>
+                        <div class="section-block links-text ng-scope"><p>
+                            <a href="">Active link — #209e91</a></p>
+
+                            <p><a href="" class="hovered">Hover link — #17857a</a></p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12" >
+                <div class="panel panel-default typography_lower-panel">
+                    <div class="bg">
+                        <div class="banner-holder">
+                            <div class="banner">
+                                <h1>Simple Banner Text</h1>
+                                <p>Lorem ipsum dolor sit amet <br>
+                                    Odio amet viverra rutrum</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Columns</h2>
+                    <div class="row">
+                        <div class="col-sm-12 col-sm-6 ">
+                            <div class="bg-small _pad-l">
+                                <img class="" src="http://akveo.com/blur-admin/assets/img/app/typography/typo03.png" alt="">
+                            </div>
+                            <div class="bg-small _pad-l">
+                                Vel elit, eros elementum, id lacinia, duis non ut ut tortor blandit. Mauris dapibus magna rutrum. Ornare neque suspendisse phasellus wisi, quam cras pede rutrum suspendisse, felis amet eu. Congue magna elit quisque quia, nullam justo sagittis, ante erat libero placerat, proin condimentum consectetuer lacus. Velit condimentum velit, sed penatibus arcu nulla.
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-sm-12 col-sm-6">
+                            <div class="bg-small _pad-r">
+                                <img class="" src="http://akveo.com/blur-admin/assets/img/app/typography/typo04.png" alt="">
+                            </div>
+                            <div class="bg-small _pad-r">
+                                Vel elit, eros elementum, id lacinia, duis non ut ut tortor blandit. Mauris dapibus magna rutrum. Ornare neque suspendisse phasellus wisi, quam cras pede rutrum suspendisse, felis amet eu. Congue magna elit quisque quia, nullam justo sagittis, ante erat libero placerat, proin condimentum consectetuer lacus. Velit condimentum velit, sed penatibus arcu nulla.
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="bg-small _pad-l">
+                                <img class="" src="http://akveo.com/blur-admin/assets/img/app/typography/typo03.png" alt="">
+                            </div>
+                            <div class="bg-small _pad-l">
+                                Vel elit, eros elementum, id lacinia, duis non ut ut tortor blandit. Mauris dapibus magna rutrum. Ornare neque suspendisse phasellus wisi, quam cras pede rutrum suspendisse, felis amet eu. Congue magna elit quisque quia, nullam justo sagittis, ante erat libero placerat, proin condimentum consectetuer lacus. Velit condimentum velit, sed penatibus arcu nulla.
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="bg-small _pad-r">
+                                <img class="" src="http://akveo.com/blur-admin/assets/img/app/typography/typo04.png" alt="">
+                            </div>
+                            <div class="bg-small _pad-r">
+                                Vel elit, eros elementum, id lacinia, duis non ut ut tortor blandit. Mauris dapibus magna rutrum. Ornare neque suspendisse phasellus wisi, quam cras pede rutrum suspendisse, felis amet eu. Congue magna elit quisque quia, nullam justo sagittis, ante erat libero placerat, proin condimentum consectetuer lacus. Velit condimentum velit, sed penatibus arcu nulla.
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="bg-small _pad-r">
+                                <img class="" src="http://akveo.com/blur-admin/assets/img/app/typography/typo05.png" alt="">
+                            </div>
+                            <div class="bg-small _pad-r">
+                                Vel elit, eros elementum, id lacinia, duis non ut ut tortor blandit. Mauris dapibus magna rutrum. Ornare neque suspendisse phasellus wisi, quam cras pede rutrum suspendisse, felis amet eu. Congue magna elit quisque quia, nullam justo sagittis, ante erat libero placerat, proin condimentum consectetuer lacus. Velit condimentum velit, sed penatibus arcu nulla.
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                    <hr>
+                    <br>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</main>
+
+<br>
+
+
+<!--[if lt IE 9]>
+<script src="libs/html5shiv/es5-shim.min.js"></script>
+<script src="libs/html5shiv/html5shiv.min.js"></script>
+<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>
+<script src="libs/respond/respond.min.js"></script>
+<![endif]-->
+
+<script src="libs/jquery/jquery-1.11.2.min.js"></script>
+<script src="libs/bootstrap/js/bootstrap.min.js"></script>
+<!-- Load Scripts Start -->
+<script>
+    var scr = {
+        "scripts": [
+            {"src": "js/libs.js", "async": false},
+            //{"src" : "libs/superfish/dist/js/superfish.min.js", "async" : false},
+            {"src": "js/common.js", "async": false}
+        ]
+    };
+    !function (t, n, r) {
+        "use strict";
+        var c = function (t) {
+            if ("[object Array]" !== Object.prototype.toString.call(t))return !1;
+            for (var r = 0; r < t.length; r++) {
+                var c = n.createElement("script"), e = t[r];
+                c.src = e.src, c.async = e.async, n.body.appendChild(c)
+            }
+            return !0
+        };
+        t.addEventListener ? t.addEventListener("load", function () {
+            c(r.scripts);
+        }, !1) : t.attachEvent ? t.attachEvent("onload", function () {
+            c(r.scripts)
+        }) : t.onload = function () {
+            c(r.scripts)
+        }
+    }(window, document, scr);
+</script>
+<!-- Load Scripts End -->
+
+</body>
+</html>

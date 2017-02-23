@@ -1,0 +1,96 @@
+.mail-panel_left {
+  float: left;
+  width: 200px;
+  height: 100%;
+  overflow: hidden; }
+  @media all and (max-width: 660px) {
+    .mail-panel_left {
+      width: 0 !important;
+      border: none; } }
+  .mail-panel_left .links {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.12);
+    margin-top: 61px;
+    padding-bottom: 25px; }
+  .mail-panel_left .links a {
+    display: block;
+    padding: 5px 30px; }
+  .mail-panel_left .badge {
+    transform: translate(-5px, 5px) scale(1.2, 1.2); }
+  .mail-panel_left .buttons {
+    margin: 46px; }
+  .mail-panel_left .left-lower-buttons i {
+    font-size: 16px; }
+  .mail-panel_left .left-lower-buttons span {
+    font-size: 14px;
+    white-space: nowrap; }
+
+.mail-panel_right {
+  width: 100%;
+  padding-left: 200px; }
+  @media all and (max-width: 660px) {
+    .mail-panel_right {
+      padding-left: 0; } }
+  .mail-panel_right .for-border {
+    min-height: 466px;
+    border-left: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: -1px 0 0 0 rgba(255, 255, 255, 0.12); }
+  .mail-panel_right .panel-right__upper {
+    padding: 15px 0;
+    vertical-align: top;
+    font-size: 13px; }
+  .mail-panel_right .upper_refresh {
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 10px; }
+  .mail-panel_right table {
+    width: 100%; }
+  .mail-panel_right tr.message {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.12); }
+    .mail-panel_right tr.message td {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.12); }
+    .mail-panel_right tr.message:hover img {
+      animation: rorateAndReverse .8s; }
+    .mail-panel_right tr.message td:nth-child(3) {
+      font-size: 14px; }
+    .mail-panel_right tr.message td:nth-child(4), .mail-panel_right tr.message td:nth-child(5), .mail-panel_right tr.message td:nth-child(6) {
+      font-weight: 300; }
+    .mail-panel_right tr.message td:nth-child(5), .mail-panel_right tr.message td:nth-child(6) {
+      font-size: 14px; }
+    .mail-panel_right tr.message img {
+      padding: 7px; }
+  .mail-panel_right .lower-buttons .btn {
+    margin-bottom: 10px; }
+
+.inner-message {
+  padding: 68px 20px 10px 32px; }
+  .inner-message .foto {
+    margin: 0;
+    width: 80px; }
+    @media all and (max-width: 991px) {
+      .inner-message .foto {
+        margin: 0 auto;
+        width: 150px; } }
+  @media all and (min-width: 991px) {
+    .inner-message .name-holder {
+      margin-left: 10px;
+      display: inline-block; } }
+  .inner-message .person-info {
+    margin-left: 8px; }
+    .inner-message .person-info .name {
+      font-weight: 300;
+      margin-bottom: 0;
+      font-size: 24px; }
+  .inner-message .fa-mobile {
+    margin-right: 10px; }
+  @media all and (max-width: 1199px) {
+    .inner-message .lowered {
+      padding-top: 20px; } }
+  .inner-message .message-text {
+    margin-top: 20px; }
+
+.mail-button {
+  width: 49px;
+  padding: 0 9px; }

@@ -1,0 +1,152 @@
+
+@import "vars.sass"
+
+
+%_border
+  &:hover
+    border: $border
+body
+  font-size: 16px
+  min-width: 320px
+  position: relative
+  line-height: 1.6
+  font-family: "Roboto", sans-serif
+  overflow-x: hidden
+  min-height: 100vh
+  background-color: grey
+  +input-placeholder()
+
+a
+  @extend %underline-none
+.header
+  z-index: 11
+  position: fixed
+  width: 100%
+  height: 66px
+  background: linear-gradient(to right, #34403B, #101820)
+
+  i
+    color: white
+  >*
+    vertical-align: baseline
+
+.logo
+  margin: 9px 12px 0 20px
+  font-size: 24px
+  color: white
+  transition: color .2s
+  @media #{$media-500}
+    margin: 9px 12px 0 5px
+  &:hover
+    color: $mainFontColor
+.hamburger
+  cursor: pointer
+  position: relative
+  i
+    //position: absolute
+    transform: translateY(-2px)
+
+.search-header
+  margin-left: 30px
+  line-height: 33px
+  @media #{$media-660}
+    display: none!important
+  i
+    font-size: 12px
+  input
+    width: 120px
+    margin-left: 17px
+    background-color: transparent
+    border: none
+    color: white
+    outline: none
+
+.user-bar
+  float: right
+  margin: 10px 35px 0 0
+  &_item
+    position: relative
+    width: 43px
+  img
+    margin-left: 15px
+
+.badge-admin
+  font-weight: 400
+  padding: 1px 4px
+.badge-user-bar
+  position: absolute
+
+.badge-red
+  background-color: red
+.badge-green
+  background-color: green
+
+.contact-header
+  float: right
+  margin: 20px 19px 0 0
+  color: white
+  font-size: (14/16)*1em
+
+  a
+    color: #209e91
+    @extend %underline-none
+
+.aside
+  z-index: 11
+  background-color: #111819
+  top: 66px
+  width: $WSideBar
+  position: fixed
+  height: 100%
+  transition: width .4s
+
+  ul
+    white-space: nowrap
+    overflow: hidden
+    padding-left: 0
+    margin-top: 18px
+    ul
+      margin-top: 0
+
+  li
+    position: relative
+    padding: 7px 0 8px
+    &:not(.active) a:hover
+      color: $mainFontColor
+    &.active a:hover
+      color: white
+  li.active
+    background-color: #209e91
+
+  a
+    font-size: 13px
+    color: white
+  .link
+    /*для hover*/
+    padding: 13px 71px 13px 0
+  .sub-link
+    padding: 13px 111px 13px 52px
+
+  i
+    padding-left: 18px
+    padding-right: 18px
+    width: 16px + 18px + 18px
+
+  .fa_link
+    float: right
+    font-size: 17px
+    //position: absolute
+    //top: 12px
+    //right: 10px
+    transform: translate(-12px,5px)
+
+.aside li:hover
+  border-right: 3px solid #209e91
+  .fa_link
+    transform: translate(-9px,5px)
+
+.menu-collapsed .aside
+  li:hover
+    border-right: none
+  ul ul li
+    display: none

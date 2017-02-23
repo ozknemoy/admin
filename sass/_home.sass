@@ -1,0 +1,51 @@
+@import "vars.sass"
+
+.home
+
+
+
+.dashboard-item
+  margin: 7px 27px 7px 7px
+
+.db-item_text
+  margin-left: 23px
+  vertical-align: middle
+  font-size: 18px
+i.db-item_icon
+  font-size: 80px
+
+.db-item_stats
+  font-size: 24px
+//border: $border
+.channels
+  margin-bottom: 29px
+  .round
+    width: 30px
+    height: 30px
+  .round-lime
+    background-color: limegreen
+  .round-white
+    background-color: white
+  .channels-text
+    font-size: 18px
+    margin-left: 30px + 15px
+  .channels-progress
+    border-bottom: 4px solid grey
+
+.panel_feed-item
+  overflow: hidden
+  min-height: 80px
+  max-height: 80px
+  padding: 10px 20px
+  +borderStandart()
+  .feed-message
+    padding-left: 86px
+    &-header
+      font-size: 13px
+    &-body
+      overflow: hidden
+      font-size: 12px
+  &.expanded
+    max-height: 380px
+.large-panel .scrollable
+  height: 785px

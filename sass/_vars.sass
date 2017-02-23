@@ -1,0 +1,59 @@
+$border: 1px solid white
+$mainColor: #4a0565
+$accentColor: #ffb445
+$inputColor: rgb(169, 169, 169)
+
+$mainFontColor: #209e91
+$mainFontColorHover: #1b867b
+$commonFontColor: white
+$wSideBar: 52px
+$WSideBar: 180px
+
+$mediaXS: 'all and (max-width: 767px)'
+$mediaMD: 'all and (max-width: 1199px)'
+$mediaSM: 'all and (max-width: 991px)'
+$mediaLG: 'all and (min-width: 1200px)'
+$mediaSM-: 'all and (min-width: 991px)'
+$media-500: 'all and (max-width: 500px)'
+$media-560: 'all and (max-width: 560px)'
+$media-660: 'all and (max-width: 660px)'
+%border
+  border: $border
+=_border()
+  border: $border
+=borderStandart($side:'bottom')
+  border-#{$side}: 1px solid rgba(0,0,0,.12)
+  @if($side=='bottom')
+    box-shadow: 0 1px 0 0 rgba(255,255,255,.12)
+  @else if($side=='right')
+    box-shadow: 1px 0 0 0 rgba(255,255,255,.12)
+  @else if($side=='top')
+    box-shadow: 0 -1px 0 0 rgba(255,255,255,.12)
+  @else if($side=='left')
+    box-shadow: -1px 0 0 0 rgba(255,255,255,.12)
+
+=input-placeholder($color:$inputColor)
+  *::-webkit-input-placeholder
+    color: $color
+    opacity: 1
+  *:-moz-placeholder
+    color: $color
+    opacity: 1
+  *::-moz-placeholder
+    color: $color
+    opacity: 1
+  *:-ms-input-placeholder
+    color: $color
+    opacity: 1
+
+%underline-none
+  text-decoration: none
+  &:hover
+    text-decoration: none
+
+=border($place, $color, $width)
+  @if $place == 'all'
+    border: $width solid $color
+  @else
+    border-#{$place}: $width solid $color
+

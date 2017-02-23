@@ -1,0 +1,99 @@
+@import '_vars'
+
+
+.mail-panel
+  &_left
+    float: left
+    width: 200px
+    height: 100%
+    overflow: hidden
+    @media #{$media-660}
+      width: 0!important
+      border: none
+    .links
+      +borderStandart()
+      margin-top: 61px
+      padding-bottom: 25px
+    .links a
+      display: block
+      padding: 5px 30px
+    .badge
+      transform: translate(-5px,5px) scale(1.2,1.2)
+    .buttons
+      margin: 46px
+    .left-lower-buttons
+      i
+        font-size: 16px
+      span
+        font-size: 14px
+        white-space: nowrap
+
+  &_right
+    width: 100%
+    padding-left: 200px
+    @media #{$media-660}
+      padding-left: 0
+    .for-border
+      min-height: 466px
+      +borderStandart('left')
+    .panel-right__upper
+      padding: 15px 0
+      vertical-align: top
+      font-size: 13px
+    .upper_refresh
+      cursor: pointer
+      margin-right: 10px
+      margin-left: 10px
+    table
+      width: 100%
+    tr.message
+      +borderStandart()
+      td
+        +borderStandart()
+      &:hover
+        img
+          animation: rorateAndReverse .8s
+      td:nth-child(3)
+        font-size: 14px
+
+        //vertical-align: super
+      td:nth-child(4),td:nth-child(5),td:nth-child(6)
+        font-weight: 300
+      td:nth-child(5),td:nth-child(6)
+        font-size: 14px
+      img
+        padding: 7px
+    .lower-buttons .btn
+       margin-bottom: 10px
+
+.inner-message
+  padding: 68px 20px 10px 32px
+  .foto
+    margin: 0
+    width: 80px
+    @media #{$mediaSM}
+      margin: 0 auto
+      width: 150px
+  .name-holder
+    @media #{$mediaSM-}
+      margin-left: 10px
+      display: inline-block
+  .person-info
+    margin-left: 8px
+    .name
+      font-weight: 300
+      margin-bottom: 0
+      font-size: 24px
+  .fa-mobile
+    margin-right: 10px
+  .lowered
+    @media #{$mediaMD}
+      padding-top: 20px
+  .message-text
+    margin-top: 20px
+.mail-button
+  width: 49px
+  padding: 0 9px
+
+
+
