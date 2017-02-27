@@ -1,13 +1,19 @@
 $border: 1px solid white
 $mainColor: #4a0565
 $accentColor: #ffb445
-$inputColor: rgb(169, 169, 169)
+$inputColor: white //rgb(169, 169, 169)
 
 $mainFontColor: #209e91
 $mainFontColorHover: #1b867b
 $commonFontColor: white
+$commonFontColorInvert: #000000
 $wSideBar: 52px
 $WSideBar: 180px
+
+$color-success: lime //#3c763d
+$color-info: #4a5dff // #31708f
+$color-danger: red // #a94442
+$color-warning: yellow // #8a6d3b
 
 $mediaXS: 'all and (max-width: 767px)'
 $mediaMD: 'all and (max-width: 1199px)'
@@ -21,6 +27,8 @@ $media-660: 'all and (max-width: 660px)'
   border: $border
 =_border()
   border: $border
+=backgroundTrans($transparantcy: 0.3)
+  background-color: rgba(0, 0, 0, $transparantcy)
 =borderStandart($side:'bottom')
   border-#{$side}: 1px solid rgba(0,0,0,.12)
   @if($side=='bottom')
@@ -33,18 +41,25 @@ $media-660: 'all and (max-width: 660px)'
     box-shadow: -1px 0 0 0 rgba(255,255,255,.12)
 
 =input-placeholder($color:$inputColor)
-  *::-webkit-input-placeholder
-    color: $color
-    opacity: 1
-  *:-moz-placeholder
-    color: $color
-    opacity: 1
-  *::-moz-placeholder
-    color: $color
-    opacity: 1
-  *:-ms-input-placeholder
-    color: $color
-    opacity: 1
+  $tag: '.form-control'
+  #{$tag}::-webkit-input-placeholder
+    color: $color !important
+  #{$tag}:-moz-placeholder
+    color: $color !important
+  #{$tag}::-moz-placeholder
+    color: $color !important
+  #{$tag}:-ms-input-placeholder
+    color: $color !important
+  #{$tag}[disabled]::-webkit-input-placeholder
+    color: grey !important
+  #{$tag}[disabled]:-moz-placeholder
+    color: grey !important
+  #{$tag}[disabled]::-moz-placeholder
+    color: grey !important
+  #{$tag}[disabled]:-ms-input-placeholder
+    color: grey !important
+
+
 
 %underline-none
   text-decoration: none
@@ -57,3 +72,13 @@ $media-660: 'all and (max-width: 660px)'
   @else
     border-#{$place}: $width solid $color
 
+=placeholdersColor($color: $commonFontColor)
+  input[type="text"], textarea
+    &::-webkit-input-placeholder
+      color: $color
+    &::-moz-placeholder
+      color: $color /* Firefox 19+ */
+    &:-moz-placeholder
+      color: $color /* Firefox 18- */
+    &:-ms-input-placeholder
+      color: $color

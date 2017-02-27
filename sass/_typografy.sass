@@ -2,6 +2,13 @@
 h1, h2, h3, h4, h5, h6, p
   font-family: Roboto,sans-serif
 
+body
+  font-size: 16px
+  min-width: 320px
+  +input-placeholder()
+  line-height: 1.6
+
+
 h1
   font-size: 24px
 h5
@@ -12,18 +19,18 @@ h5
 
 .thin
   font-weight: 300
-
 .light-text
   font-weight: 300
-
 .regular-text
   font-weight: 400
 .bold-text
   font-weight: 700
-
 .small-text
   font-size: 14px
-
+.sm-text
+  font-size: 14px
+.xs-text
+  font-size: 12px
 .red-text
   color: red
   &__light
@@ -38,6 +45,6 @@ h5
   color: $mainFontColorHover!important
 
 
-
-
+.text-invert, .text-invert a, .text-invert .panel-heading a
+  color: $commonFontColorInvert
 

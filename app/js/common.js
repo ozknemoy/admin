@@ -28,6 +28,7 @@ $(function() {
 
         });
 
+        /*  comp-email.html  */
         $('.feed-message-body').on(click,function() {
             var p = $(this).parent().parent();
             var t = $(this).text().trim();
@@ -43,6 +44,25 @@ $(function() {
         });
         $('.jquery_click').on(click,function() {
             $('.mail-panel_right').toggleClass('hide')
+        });
+        /*  comp-email.html end   */
+
+        /*  tabs-admin  tabs.html */
+        $('.jq-tabs-admin').delegate('.a_jq-tabs-admin',click,function(e) {
+            //console.log(e.target.id,e);
+
+            var parent = $(e.delegateTarget);
+            parent.children().removeClass('active');
+            var target = $(e.target);
+            if(target.hasClass('sub_jq-tabs')) {
+                target.parent().parent().parent().addClass('active');
+            } else {
+                target.parent().addClass('active');
+            }
+            // ищу в следущем/предыдущем элементе контент для скрытия/показа
+            var sibling = parent.next()[0]? parent.next() : parent.prev();
+            sibling.find('._jq-tabs-admin').addClass('hide');
+            sibling.find('#_' + e.target.id).removeClass('hide');
         });
     });
 	//E-mail Ajax Send
