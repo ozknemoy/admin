@@ -1,1 +1,58 @@
+@import "vars.sass"
+
+.panel.user-profile
+  color: $commonFontColorInvert
+.nav-user-profile
+  color: $widgetBorder
+  border-bottom: 1px solid $widgetBorder
+  li
+    display: inline-block
+    &.active
+      border-top: 3px solid $color-info
+      border-right: 1px solid $widgetBorder
+      transform: translate(1px,.5px) scale(1.02)
+
+      background-color: #fff
+      &:not(:first-child)
+        border-left: 1px solid $widgetBorder
+    a:hover
+      color: lighten($commonFontColorInvert,35%)
+      background-color: #fff
+  li > a:hover,li > a:focus
+    background-color: #fff
+  a
+    color: $commonFontColorInvert
+    font-size: 14px
+
+.activity-message
+  margin: 5px
+  border-bottom: 1px solid $widgetBorder
+  +input-placeholder($commonFontColorInvert)
+  .id
+    margin-left: 60px
+  .name
+    color: $color-info
+    font-weight: bold
+  .time
+    font-size: 12px
+    color: darken($widgetBorder,25%)
+  p
+    font-size: 14px
+    color: #666
+  input
+    width: 100%
+    color: $commonFontColorInvert
+    &:focus
+      border: 1px solid $widgetBorder
+      outline: none
+
+
+
+
+
+
+
+
+
+
 
