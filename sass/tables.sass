@@ -1,0 +1,56 @@
+$borderR: 4px
+$fontSize: 14px
+
+$tableBorderColor: #d3d3d3
+$tableBorderWidth: 1px
+
+
+
+body *
+  box-sizing: border-box
+  font-size: $fontSize
+
+$inputBorderColor: #1598ff
+$inputBorderWidth: 1px
+$inputBorderR: $borderR
+$inputFontSize: 13px
+$inputH: 30px
+$inputLH: 20px
+
+.text-input
+  outline: 0
+  padding: 5px 0
+  line-height: $inputLH
+  height: $inputH
+  text-indent: $inputLH/4
+  background-color: #fff
+  border: $tableBorderWidth solid $inputBorderColor
+  border-radius: $inputBorderR
+  font-size: $inputFontSize
+
+.e-edit-tbl,
+.e-view-tbl
+  border: $tableBorderWidth solid $tableBorderColor
+  border-collapse: collapse
+  border-spacing: 0
+  width: 100%
+  margin: 0
+  max-width: none
+  empty-cells: show
+  outline: 0
+  &__th, &__td
+    border: $tableBorderWidth solid $tableBorderColor
+    padding: 4px
+  &__td-edit
+    padding: 1px
+  &__text-input
+    border-color: transparent
+  &__text-input:hover
+    border-color: $inputBorderColor
+
+
+.e-edit-tbl,
+.e-row-edit-tbl
+  &__text-input
+    width: 100%
+    @extend .text-input
