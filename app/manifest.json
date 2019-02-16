@@ -1,0 +1,24 @@
+{
+  "name" : "Hello world",
+  "version" : "1.0",
+  "description" : "This is a simple chrome extention",
+  "manifest_version": 2,
+  "browser_action" : {
+    "default_title" : "Hello world!!!",
+    "default_icon" : "img/favicon/favicon.ico",
+    "default_popup" : "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "css": ["css/main.min.css"],
+      "js": ["js/jquery.js", "js/index.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "css/fonts.min.css",
+    "css/main.min.css",
+    "js/index.js"
+  ],
+  "content_security_policy": "script-src 'self' https://code.jquery.com/jquery-2.2.4.min.js; object-src 'self'"
+}
